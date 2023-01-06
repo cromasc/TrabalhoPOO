@@ -13,9 +13,18 @@ namespace Trabalho_Final
         public string senha;
         public string CPF;
         public string endereco;
-        public string nPets;
-        public string nomePets;
+        public int nPets;
+        public string[] nomePets;
 
-
+        public Cadastro(string nome, string usuario, string senha, string CPF, string endereco, string[] nomePets)
+        {
+            this.nome = nome;
+            this.usuario = usuario;
+            this.senha = senha;
+            this.CPF = CPF;
+            this.endereco = endereco;
+            this.nPets = nomePets.Length;
+            this.nomePets = nomePets;
+        }
     }
 }

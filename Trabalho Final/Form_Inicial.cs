@@ -53,6 +53,7 @@ namespace Trabalho_Final
             } 
             else
             {
+                // objeto da string de conexão
                 ConexaoString strconn = new ConexaoString();
 
                 // salva a string de conexão dentro da instância

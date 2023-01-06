@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Npgsql;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -22,6 +23,7 @@ namespace Trabalho_Final
 
         private void bgColor()
         {
+            // muda a cor de fundo de várias estruturas do form
             BackColor = Color.FromArgb(40, 42, 54);
             textNome.BackColor = Color.FromArgb(56, 58, 89);
             textUser.BackColor = Color.FromArgb(56, 58, 89);
@@ -60,23 +62,37 @@ namespace Trabalho_Final
         {
             if (personalDataPanel.Visible == true)
             {
-                subtitle.Text = "Insira agora seu endereço.";
-                personalDataPanel.Visible = false;
-                addressPanel.Visible = true;
-                backBtn.Visible = true;
+                if (textNome.Text == "" || textUser.Text == ""
+                || textPwd.Text == "" || textCPF.Text == "")
+                {
+                    MessageBox.Show("Campos em branco.\nPreencha novamente.", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    subtitle.Text = "Insira agora seu endereço.";
+                    personalDataPanel.Visible = false;
+                    addressPanel.Visible = true;
+                    backBtn.Visible = true;
 
-                posicionamento();
+                    posicionamento();
+                }
             }
             else if (addressPanel.Visible == true)
             {
-                subtitle.Text = "Digite o nome dos seus pets\n(separados por vírgulas).";
-                addressPanel.Visible = false;
-                petsPanel.Visible = true;
-                finalizarBtn.Visible = true;
+                if (ruaText.Text == "" || numeroText.Text == "" || bairroText.Text == "")
+                {
+                    MessageBox.Show("Campos em branco.\nPreencha novamente.", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    subtitle.Text = "Digite o nome dos seus pets\n(separados por vírgulas).";
+                    addressPanel.Visible = false;
+                    petsPanel.Visible = true;
+                    finalizarBtn.Visible = true;
 
-                posicionamento();
+                    posicionamento();
+                }
             }
-            
         }
 
         private void backBtn_Click(object sender, EventArgs e)
@@ -103,7 +119,54 @@ namespace Trabalho_Final
 
         private void finalizarBtn_Click(object sender, EventArgs e)
         {
-            Close();
+            if (namePets.Text == "")
+            {
+                MessageBox.Show("Campos em branco.\nPreencha novamente.", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                Cursor = Cursors.WaitCursor;
+
+                // criação da string endereço pela junção das strings de dados inseridas
+                string endereco = string.Format("Rua {0} {1} {2}. Bairro {3}",
+                    ruaText.Text, numeroText.Text, compText.Text, bairroText.Text);
+
+                // objeto de cadastro
+                Cadastro novo_cadastro = new Cadastro(textNome.Text, textUser.Text,
+                    textPwd.Text, textCPF.Text, endereco,
+                    namePets.Text.Split(','));
+
+                ConexaoString strconn = new ConexaoString();
+
+                string conexao = strconn.ConnString();
+
+                NpgsqlConnection con = new NpgsqlConnection(conexao);
+
+                con.Open();
+
+                string cmd = string.Format("INSERT INTO clientes VALUES ('{0}', '{1}', {2}, '{3}', '{4}', '{5}');",
+                    novo_cadastro.nome, novo_cadastro.CPF,
+                    novo_cadastro.nPets, novo_cadastro.endereco,
+                    novo_cadastro.usuario, novo_cadastro.senha);
+
+                using(NpgsqlCommand pgsqlcmd = new NpgsqlCommand(cmd, con))
+                {
+                    pgsqlcmd.ExecuteNonQuery();
+                }
+
+                for (int i = 0; i < novo_cadastro.nPets; i++)
+                {
+                    cmd = string.Format("INSERT INTO pets VALUES ('{0}', '{1}');", novo_cadastro.nome, novo_cadastro.nomePets[i]);
+
+                    using (NpgsqlCommand pgsqlcmd = new NpgsqlCommand(cmd, con))
+                    {
+                        pgsqlcmd.ExecuteNonQuery();
+                    }
+                }
+
+                con.Close();
+                Close();
+            }
         }
     }
 }
