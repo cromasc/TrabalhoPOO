@@ -17,11 +17,11 @@ namespace Trabalho_Final
         {
             InitializeComponent();
             CenterToScreen();
-            posicionamento();
-            bgColor();
+            Posicao();
+            BgColor();
         }
 
-        private void posicionamento()
+        private void Posicao()
         {
             // titulo
             title.Location = new Point((Width - title.Width) / 2, 10);
@@ -30,7 +30,7 @@ namespace Trabalho_Final
             cadPanel.Location = new Point((Width - cadPanel.Width) / 2, 140);
         }
 
-        private void bgColor()
+        private void BgColor()
         {
             BackColor = Color.FromArgb(40, 42, 54);
             clientUser.BackColor = Color.FromArgb(56, 58, 89);
@@ -39,45 +39,45 @@ namespace Trabalho_Final
             cadBtn.BackColor = Color.FromArgb(56, 58, 89);
         }
 
-        public void limpar()
+        private void limpar()
         {
-            clientUser.Text = "";
-            clientPassword.Text = "";
+            clientUser.Text = string.Empty; 
+            clientPassword.Text = string.Empty;
+        }
+
+        public DataTable conexao(string cmd)
+        {
+            ConexaoString strconn = new ConexaoString();
+            string conexao = strconn.ConnString();
+            NpgsqlConnection con = new NpgsqlConnection(conexao);
+
+            con.Open();
+
+            DataTable dt = new DataTable();
+
+            using (NpgsqlDataAdapter Adpt = new NpgsqlDataAdapter(cmd, con))
+            {
+                Adpt.Fill(dt);
+            }
+
+            con.Close();
+            return dt;
         }
 
         private void entrarBtn_Click(object sender, EventArgs e)
         {
             if (clientUser.Text == "" || clientPassword.Text == "")
             {
-                MessageBox.Show("Campos em branco.\nPreencha novamente.", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Campos em branco.\nPreencha novamente.", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
             } 
             else
             {
-                // objeto da string de conexão
-                ConexaoString strconn = new ConexaoString();
+                DataTable dt = conexao(string.Format("SELECT * FROM clientes WHERE usuario = '{0}' AND senha = '{1}';", clientUser.Text, clientPassword.Text));
 
-                // salva a string de conexão dentro da instância
-                string conexao = strconn.ConnString();
-
-                // conexão com o banco de dados
-                NpgsqlConnection con = new NpgsqlConnection(conexao); 
-
-                // objeto para armazenar a tabela
-                DataTable dt = new DataTable();
-                
-                // é aberta a conexão com o servidor
-                con.Open(); 
-
-                string cmd = string.Format("SELECT * FROM clientes WHERE usuario = '{0}' AND senha = '{1}';", clientUser.Text, clientPassword.Text); // query para efetuar o login
-
-                using (NpgsqlDataAdapter Adpt = new NpgsqlDataAdapter(cmd, con))
-                {
-                    Adpt.Fill(dt);
-                }
                 if (dt.Rows.Count == 0) // caso não haja usuário e senha correspondentes, dt terá 0 de linhas
                 {
-                    MessageBox.Show("Usuário ou senha incorretos.\nPreencha novamente.", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    con.Close();
+                    MessageBox.Show("Usuário ou senha incorretos.\nPreencha novamente.", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    clientPassword.Text = string.Empty;
                 }
                 else
                 {
@@ -87,16 +87,26 @@ namespace Trabalho_Final
                         Convert.ToInt16(dt.Rows[0]["numero_de_pets"]), 
                         dt.Rows[0]["endereco"].ToString(), dt.Rows[0]["usuario"].ToString());
 
-                    MessageBox.Show(objCliente.Nome, this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    con.Close();
+                    limpar();
+                    Form_Main form = new Form_Main(objCliente);
+                    form.ShowDialog();
                 }
             }
         }
 
         private void cadBtn_Click(object sender, EventArgs e)
         {
+            limpar();
             Form_cadastro form = new Form_cadastro();
-            form.Show();
+            form.ShowDialog();
+        }
+
+        private void clientPassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                entrarBtn_Click(sender, e);
+            }
         }
     }
 }

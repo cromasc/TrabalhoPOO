@@ -89,21 +89,21 @@
             // textNome
             // 
             this.textNome.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textNome.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textNome.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textNome.ForeColor = System.Drawing.Color.White;
-            this.textNome.Location = new System.Drawing.Point(73, 0);
+            this.textNome.Location = new System.Drawing.Point(67, 0);
             this.textNome.Name = "textNome";
-            this.textNome.Size = new System.Drawing.Size(106, 25);
+            this.textNome.Size = new System.Drawing.Size(112, 26);
             this.textNome.TabIndex = 27;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Silver;
             this.label3.Location = new System.Drawing.Point(-4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(59, 21);
+            this.label3.Size = new System.Drawing.Size(52, 21);
             this.label3.TabIndex = 26;
             this.label3.Text = "Nome";
             // 
@@ -119,21 +119,21 @@
             // textUser
             // 
             this.textUser.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textUser.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textUser.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textUser.ForeColor = System.Drawing.Color.White;
-            this.textUser.Location = new System.Drawing.Point(73, 0);
+            this.textUser.Location = new System.Drawing.Point(67, 0);
             this.textUser.Name = "textUser";
-            this.textUser.Size = new System.Drawing.Size(106, 25);
+            this.textUser.Size = new System.Drawing.Size(112, 26);
             this.textUser.TabIndex = 27;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Silver;
             this.label1.Location = new System.Drawing.Point(-4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(70, 21);
+            this.label1.Size = new System.Drawing.Size(64, 21);
             this.label1.TabIndex = 26;
             this.label1.Text = "Usuário";
             // 
@@ -149,21 +149,21 @@
             // textPwd
             // 
             this.textPwd.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textPwd.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textPwd.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textPwd.ForeColor = System.Drawing.Color.White;
-            this.textPwd.Location = new System.Drawing.Point(73, 0);
+            this.textPwd.Location = new System.Drawing.Point(67, 0);
             this.textPwd.Name = "textPwd";
-            this.textPwd.Size = new System.Drawing.Size(106, 25);
+            this.textPwd.Size = new System.Drawing.Size(112, 26);
             this.textPwd.TabIndex = 27;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Silver;
             this.label2.Location = new System.Drawing.Point(-4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(59, 21);
+            this.label2.Size = new System.Drawing.Size(52, 21);
             this.label2.TabIndex = 26;
             this.label2.Text = "Senha";
             // 
@@ -179,46 +179,46 @@
             // textCPF
             // 
             this.textCPF.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textCPF.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textCPF.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textCPF.ForeColor = System.Drawing.Color.White;
-            this.textCPF.Location = new System.Drawing.Point(73, 0);
+            this.textCPF.Location = new System.Drawing.Point(67, 0);
             this.textCPF.Mask = "000.000.000-00";
             this.textCPF.Name = "textCPF";
-            this.textCPF.Size = new System.Drawing.Size(106, 25);
+            this.textCPF.Size = new System.Drawing.Size(112, 26);
             this.textCPF.TabIndex = 34;
             this.textCPF.ValidatingType = typeof(int);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Silver;
             this.label4.Location = new System.Drawing.Point(-4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(43, 21);
+            this.label4.Size = new System.Drawing.Size(36, 21);
             this.label4.TabIndex = 26;
             this.label4.Text = "CPF";
             // 
             // title
             // 
             this.title.AutoSize = true;
-            this.title.Font = new System.Drawing.Font("Berlin Sans FB", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.title.Font = new System.Drawing.Font("Calibri", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.title.ForeColor = System.Drawing.Color.Silver;
             this.title.Location = new System.Drawing.Point(112, 9);
             this.title.Margin = new System.Windows.Forms.Padding(0);
             this.title.Name = "title";
-            this.title.Size = new System.Drawing.Size(101, 26);
+            this.title.Size = new System.Drawing.Size(103, 29);
             this.title.TabIndex = 31;
             this.title.Text = "Cadastro";
             // 
             // subtitle
             // 
             this.subtitle.AutoSize = true;
-            this.subtitle.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.subtitle.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.subtitle.ForeColor = System.Drawing.Color.Silver;
             this.subtitle.Location = new System.Drawing.Point(40, 35);
             this.subtitle.Name = "subtitle";
-            this.subtitle.Size = new System.Drawing.Size(253, 18);
+            this.subtitle.Size = new System.Drawing.Size(269, 19);
             this.subtitle.TabIndex = 28;
             this.subtitle.Text = "Preencha os seguintes dados pessoais:";
             this.subtitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -238,7 +238,7 @@
             // 
             this.nextBtn.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.nextBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.nextBtn.Font = new System.Drawing.Font("Berlin Sans FB", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nextBtn.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nextBtn.ForeColor = System.Drawing.Color.White;
             this.nextBtn.Location = new System.Drawing.Point(268, 285);
             this.nextBtn.Name = "nextBtn";
@@ -256,7 +256,7 @@
             this.addressPanel.Controls.Add(this.panel8);
             this.addressPanel.Location = new System.Drawing.Point(30, 359);
             this.addressPanel.Name = "addressPanel";
-            this.addressPanel.Size = new System.Drawing.Size(286, 88);
+            this.addressPanel.Size = new System.Drawing.Size(286, 91);
             this.addressPanel.TabIndex = 33;
             this.addressPanel.Visible = false;
             // 
@@ -272,21 +272,21 @@
             // ruaText
             // 
             this.ruaText.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.ruaText.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ruaText.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ruaText.ForeColor = System.Drawing.Color.White;
-            this.ruaText.Location = new System.Drawing.Point(44, 0);
+            this.ruaText.Location = new System.Drawing.Point(38, 0);
             this.ruaText.Name = "ruaText";
-            this.ruaText.Size = new System.Drawing.Size(242, 25);
+            this.ruaText.Size = new System.Drawing.Size(248, 26);
             this.ruaText.TabIndex = 27;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Silver;
             this.label5.Location = new System.Drawing.Point(-4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(42, 21);
+            this.label5.Size = new System.Drawing.Size(36, 21);
             this.label5.TabIndex = 26;
             this.label5.Text = "Rua";
             // 
@@ -302,21 +302,21 @@
             // numeroText
             // 
             this.numeroText.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.numeroText.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.numeroText.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.numeroText.ForeColor = System.Drawing.Color.White;
-            this.numeroText.Location = new System.Drawing.Point(73, 0);
+            this.numeroText.Location = new System.Drawing.Point(67, 0);
             this.numeroText.Name = "numeroText";
-            this.numeroText.Size = new System.Drawing.Size(35, 25);
+            this.numeroText.Size = new System.Drawing.Size(41, 26);
             this.numeroText.TabIndex = 27;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Silver;
-            this.label6.Location = new System.Drawing.Point(-4, 0);
+            this.label6.Location = new System.Drawing.Point(-6, 5);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(75, 21);
+            this.label6.Size = new System.Drawing.Size(67, 21);
             this.label6.TabIndex = 26;
             this.label6.Text = "Número";
             // 
@@ -332,21 +332,21 @@
             // bairroText
             // 
             this.bairroText.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.bairroText.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bairroText.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.bairroText.ForeColor = System.Drawing.Color.White;
-            this.bairroText.Location = new System.Drawing.Point(61, 0);
+            this.bairroText.Location = new System.Drawing.Point(55, 0);
             this.bairroText.Name = "bairroText";
-            this.bairroText.Size = new System.Drawing.Size(80, 25);
+            this.bairroText.Size = new System.Drawing.Size(86, 26);
             this.bairroText.TabIndex = 27;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Silver;
-            this.label7.Location = new System.Drawing.Point(-4, 0);
+            this.label7.Location = new System.Drawing.Point(-4, 4);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(59, 21);
+            this.label7.Size = new System.Drawing.Size(52, 21);
             this.label7.TabIndex = 26;
             this.label7.Text = "Bairro";
             // 
@@ -362,21 +362,21 @@
             // compText
             // 
             this.compText.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.compText.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.compText.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.compText.ForeColor = System.Drawing.Color.White;
-            this.compText.Location = new System.Drawing.Point(124, 0);
+            this.compText.Location = new System.Drawing.Point(118, 0);
             this.compText.Name = "compText";
-            this.compText.Size = new System.Drawing.Size(162, 25);
+            this.compText.Size = new System.Drawing.Size(168, 26);
             this.compText.TabIndex = 27;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Silver;
             this.label8.Location = new System.Drawing.Point(-4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(123, 21);
+            this.label8.Size = new System.Drawing.Size(109, 21);
             this.label8.TabIndex = 26;
             this.label8.Text = "Complemento";
             // 
@@ -384,7 +384,7 @@
             // 
             this.backBtn.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.backBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.backBtn.Font = new System.Drawing.Font("Berlin Sans FB", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.backBtn.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.backBtn.ForeColor = System.Drawing.Color.White;
             this.backBtn.Location = new System.Drawing.Point(12, 285);
             this.backBtn.Name = "backBtn";
@@ -410,17 +410,17 @@
             // namePets
             // 
             this.namePets.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.namePets.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.namePets.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.namePets.ForeColor = System.Drawing.Color.White;
-            this.namePets.Location = new System.Drawing.Point(87, 45);
+            this.namePets.Location = new System.Drawing.Point(81, 45);
             this.namePets.Multiline = true;
             this.namePets.Name = "namePets";
-            this.namePets.Size = new System.Drawing.Size(199, 43);
+            this.namePets.Size = new System.Drawing.Size(205, 43);
             this.namePets.TabIndex = 27;
             // 
             // label10
             // 
-            this.label10.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.Silver;
             this.label10.Location = new System.Drawing.Point(-4, 45);
             this.label10.Name = "label10";
@@ -431,18 +431,18 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.Silver;
             this.label9.Location = new System.Drawing.Point(-4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(139, 21);
+            this.label9.Size = new System.Drawing.Size(122, 21);
             this.label9.TabIndex = 28;
             this.label9.Text = "Número de Pets";
             // 
             // comboPets
             // 
             this.comboPets.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboPets.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboPets.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboPets.ForeColor = System.Drawing.Color.White;
             this.comboPets.FormattingEnabled = true;
             this.comboPets.Items.AddRange(new object[] {
@@ -450,20 +450,20 @@
             "2",
             "3",
             "4"});
-            this.comboPets.Location = new System.Drawing.Point(146, 0);
+            this.comboPets.Location = new System.Drawing.Point(140, 0);
             this.comboPets.Name = "comboPets";
-            this.comboPets.Size = new System.Drawing.Size(140, 26);
+            this.comboPets.Size = new System.Drawing.Size(146, 26);
             this.comboPets.TabIndex = 0;
             // 
             // finalizarBtn
             // 
             this.finalizarBtn.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.finalizarBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.finalizarBtn.Font = new System.Drawing.Font("Berlin Sans FB", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.finalizarBtn.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.finalizarBtn.ForeColor = System.Drawing.Color.White;
-            this.finalizarBtn.Location = new System.Drawing.Point(268, 285);
+            this.finalizarBtn.Location = new System.Drawing.Point(259, 285);
             this.finalizarBtn.Name = "finalizarBtn";
-            this.finalizarBtn.Size = new System.Drawing.Size(61, 25);
+            this.finalizarBtn.Size = new System.Drawing.Size(70, 25);
             this.finalizarBtn.TabIndex = 35;
             this.finalizarBtn.Text = "Finalizar";
             this.finalizarBtn.UseVisualStyleBackColor = false;

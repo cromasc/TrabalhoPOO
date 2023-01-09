@@ -45,33 +45,33 @@
             // title
             // 
             this.title.AutoSize = true;
-            this.title.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.title.Font = new System.Drawing.Font("Calibri", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.title.ForeColor = System.Drawing.Color.Silver;
             this.title.Location = new System.Drawing.Point(63, 9);
             this.title.Margin = new System.Windows.Forms.Padding(0);
             this.title.Name = "title";
-            this.title.Size = new System.Drawing.Size(293, 21);
+            this.title.Size = new System.Drawing.Size(292, 23);
             this.title.TabIndex = 20;
             this.title.Text = "Bem vindo ao assistente do MyPets";
             // 
             // clientUser
             // 
             this.clientUser.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.clientUser.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clientUser.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.clientUser.ForeColor = System.Drawing.Color.White;
-            this.clientUser.Location = new System.Drawing.Point(79, 0);
+            this.clientUser.Location = new System.Drawing.Point(68, 0);
             this.clientUser.Name = "clientUser";
-            this.clientUser.Size = new System.Drawing.Size(106, 25);
+            this.clientUser.Size = new System.Drawing.Size(117, 27);
             this.clientUser.TabIndex = 0;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Silver;
-            this.label2.Location = new System.Drawing.Point(3, 1);
+            this.label2.Location = new System.Drawing.Point(-4, 1);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(70, 21);
+            this.label2.Size = new System.Drawing.Size(64, 21);
             this.label2.TabIndex = 23;
             this.label2.Text = "Usuário";
             // 
@@ -81,39 +81,40 @@
             this.painel_cliente.Controls.Add(this.clientPassword);
             this.painel_cliente.Controls.Add(this.label2);
             this.painel_cliente.Controls.Add(this.clientUser);
-            this.painel_cliente.Location = new System.Drawing.Point(25, 45);
+            this.painel_cliente.Location = new System.Drawing.Point(49, 49);
             this.painel_cliente.Name = "painel_cliente";
-            this.painel_cliente.Size = new System.Drawing.Size(201, 66);
+            this.painel_cliente.Size = new System.Drawing.Size(185, 66);
             this.painel_cliente.TabIndex = 24;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Berlin Sans FB", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Calibri", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Silver;
-            this.label1.Location = new System.Drawing.Point(3, 36);
+            this.label1.Location = new System.Drawing.Point(-4, 37);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(59, 21);
+            this.label1.Size = new System.Drawing.Size(52, 21);
             this.label1.TabIndex = 25;
             this.label1.Text = "Senha";
             // 
             // clientPassword
             // 
             this.clientPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.clientPassword.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.clientPassword.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.clientPassword.ForeColor = System.Drawing.Color.White;
-            this.clientPassword.Location = new System.Drawing.Point(79, 36);
+            this.clientPassword.Location = new System.Drawing.Point(68, 36);
             this.clientPassword.Name = "clientPassword";
-            this.clientPassword.Size = new System.Drawing.Size(106, 25);
+            this.clientPassword.Size = new System.Drawing.Size(117, 27);
             this.clientPassword.TabIndex = 24;
             this.clientPassword.UseSystemPasswordChar = true;
+            this.clientPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.clientPassword_KeyDown);
             // 
             // entrarBtn
             // 
             this.entrarBtn.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.entrarBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.entrarBtn.Font = new System.Drawing.Font("Berlin Sans FB", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.entrarBtn.Location = new System.Drawing.Point(253, 60);
+            this.entrarBtn.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.entrarBtn.Location = new System.Drawing.Point(253, 67);
             this.entrarBtn.Name = "entrarBtn";
             this.entrarBtn.Size = new System.Drawing.Size(133, 31);
             this.entrarBtn.TabIndex = 27;
@@ -125,7 +126,7 @@
             // 
             this.cadBtn.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.cadBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.cadBtn.Font = new System.Drawing.Font("Berlin Sans FB", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cadBtn.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cadBtn.Location = new System.Drawing.Point(133, 3);
             this.cadBtn.Name = "cadBtn";
             this.cadBtn.Size = new System.Drawing.Size(103, 30);
@@ -136,7 +137,7 @@
             // 
             // label3
             // 
-            this.label3.Font = new System.Drawing.Font("Berlin Sans FB", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Silver;
             this.label3.Location = new System.Drawing.Point(1, 9);
             this.label3.Margin = new System.Windows.Forms.Padding(0);

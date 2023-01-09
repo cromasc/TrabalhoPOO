@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Trabalho_Final
 {
-    internal class Cliente
+    public class Cliente
     {
         private string nome;
         private string cpf;

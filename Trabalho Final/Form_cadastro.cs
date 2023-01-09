@@ -13,15 +13,17 @@ namespace Trabalho_Final
 {
     public partial class Form_cadastro : Form
     {
+        Form_Inicial formInicial = new Form_Inicial();
+
         public Form_cadastro()
         {
             InitializeComponent();
             CenterToParent();
-            bgColor();
-            posicionamento();
+            BgColor();
+            Posicao();
         }
 
-        private void bgColor()
+        private void BgColor()
         {
             // muda a cor de fundo de várias estruturas do form
             BackColor = Color.FromArgb(40, 42, 54);
@@ -40,7 +42,7 @@ namespace Trabalho_Final
             namePets.BackColor = Color.FromArgb(56, 58, 89);
         }
 
-        private void posicionamento()
+        private void Posicao()
         {
             // titulo
             title.Location = new Point((Width - title.Width) / 2, 10);
@@ -74,7 +76,7 @@ namespace Trabalho_Final
                     addressPanel.Visible = true;
                     backBtn.Visible = true;
 
-                    posicionamento();
+                    Posicao();
                 }
             }
             else if (addressPanel.Visible == true)
@@ -90,7 +92,7 @@ namespace Trabalho_Final
                     petsPanel.Visible = true;
                     finalizarBtn.Visible = true;
 
-                    posicionamento();
+                    Posicao();
                 }
             }
         }
@@ -104,7 +106,7 @@ namespace Trabalho_Final
                 addressPanel.Visible = false;
                 backBtn.Visible = false;
 
-                posicionamento();
+                Posicao();
             }
             else if (petsPanel.Visible == true)
             {
@@ -113,7 +115,7 @@ namespace Trabalho_Final
                 petsPanel.Visible = false;
                 finalizarBtn.Visible = false;
 
-                posicionamento();
+                Posicao();
             }
         }
 
@@ -121,51 +123,78 @@ namespace Trabalho_Final
         {
             if (namePets.Text == "")
             {
-                MessageBox.Show("Campos em branco.\nPreencha novamente.", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Campos em branco.\nPreencha novamente.", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
                 Cursor = Cursors.WaitCursor;
 
                 // criação da string endereço pela junção das strings de dados inseridas
-                string endereco = string.Format("Rua {0} {1} {2}. Bairro {3}",
-                    ruaText.Text, numeroText.Text, compText.Text, bairroText.Text);
+                string endereco;
+
+                if (compText.Text != string.Empty)
+                {
+                    endereco = string.Format("Rua {0} {1} {2}. Bairro {3}",
+                        ruaText.Text, numeroText.Text, compText.Text, bairroText.Text);
+                }
+                else
+                {
+                    endereco = string.Format("Rua {0} {1}. Bairro {3}",
+                        ruaText.Text, numeroText.Text, bairroText.Text);
+                }
 
                 // objeto de cadastro
                 Cadastro novo_cadastro = new Cadastro(textNome.Text, textUser.Text,
                     textPwd.Text, textCPF.Text, endereco,
                     namePets.Text.Split(','));
 
-                ConexaoString strconn = new ConexaoString();
+                DataTable dt_cpf = formInicial.conexao(string.Format("SELECT * FROM clientes WHERE cpf = '{0}';", novo_cadastro.CPF));
 
-                string conexao = strconn.ConnString();
+                DataTable dt_user = formInicial.conexao(string.Format("SELECT * FROM clientes WHERE usuario = '{0}';", novo_cadastro.usuario));
 
-                NpgsqlConnection con = new NpgsqlConnection(conexao);
+                if (dt_cpf.Rows.Count != 0)
+                {
+                    MessageBox.Show("CPF já cadastrado.\nFaça o login.", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Close();
+                }
+                else if (dt_user.Rows.Count != 0)
+                {
+                    MessageBox.Show("Usuário já cadastrado.", this.Text, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Cursor = Cursors.Default;
+                }
+                else
+                {
+                    ConexaoString strconn = new ConexaoString();
 
-                con.Open();
+                    string conexao = strconn.ConnString();
 
-                string cmd = string.Format("INSERT INTO clientes VALUES ('{0}', '{1}', {2}, '{3}', '{4}', '{5}');",
+                    NpgsqlConnection con = new NpgsqlConnection(conexao);
+
+                    con.Open();
+
+                    string cmd = string.Format("INSERT INTO clientes VALUES ('{0}', '{1}', {2}, '{3}', '{4}', '{5}');",
                     novo_cadastro.nome, novo_cadastro.CPF,
                     novo_cadastro.nPets, novo_cadastro.endereco,
                     novo_cadastro.usuario, novo_cadastro.senha);
-
-                using(NpgsqlCommand pgsqlcmd = new NpgsqlCommand(cmd, con))
-                {
-                    pgsqlcmd.ExecuteNonQuery();
-                }
-
-                for (int i = 0; i < novo_cadastro.nPets; i++)
-                {
-                    cmd = string.Format("INSERT INTO pets VALUES ('{0}', '{1}');", novo_cadastro.nome, novo_cadastro.nomePets[i]);
 
                     using (NpgsqlCommand pgsqlcmd = new NpgsqlCommand(cmd, con))
                     {
                         pgsqlcmd.ExecuteNonQuery();
                     }
-                }
 
-                con.Close();
-                Close();
+                    for (int i = 0; i < novo_cadastro.nPets; i++)
+                    {
+                        cmd = string.Format("INSERT INTO pets VALUES ('{0}', '{1}');", novo_cadastro.nome, novo_cadastro.nomePets[i].Trim());
+
+                        using (NpgsqlCommand pgsqlcmd = new NpgsqlCommand(cmd, con))
+                        {
+                            pgsqlcmd.ExecuteNonQuery();
+                        }
+                    }
+
+                    con.Close();
+                    Close();
+                }
             }
         }
     }
