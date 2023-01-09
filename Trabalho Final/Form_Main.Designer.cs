@@ -46,10 +46,14 @@
             this.title = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.prodPanel = new System.Windows.Forms.Panel();
+            this.itemsList = new System.Windows.Forms.ListView();
             this.label6 = new System.Windows.Forms.Label();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.addBtn = new System.Windows.Forms.Button();
+            this.removeBtn = new System.Windows.Forms.Button();
+            this.btnPanel = new System.Windows.Forms.Panel();
             this.infoPanel.SuspendLayout();
             this.prodPanel.SuspendLayout();
+            this.btnPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuBox
@@ -281,49 +285,90 @@
             // 
             // prodPanel
             // 
-            this.prodPanel.Controls.Add(this.listView1);
+            this.prodPanel.Controls.Add(this.btnPanel);
+            this.prodPanel.Controls.Add(this.itemsList);
             this.prodPanel.Controls.Add(this.label6);
             this.prodPanel.Location = new System.Drawing.Point(12, 94);
             this.prodPanel.Name = "prodPanel";
-            this.prodPanel.Size = new System.Drawing.Size(362, 314);
+            this.prodPanel.Size = new System.Drawing.Size(362, 329);
             this.prodPanel.TabIndex = 36;
             this.prodPanel.Visible = false;
+            // 
+            // itemsList
+            // 
+            this.itemsList.BackColor = System.Drawing.SystemColors.Window;
+            this.itemsList.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.itemsList.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.itemsList.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.itemsList.FullRowSelect = true;
+            this.itemsList.GridLines = true;
+            this.itemsList.HideSelection = false;
+            this.itemsList.LabelEdit = true;
+            this.itemsList.Location = new System.Drawing.Point(3, 34);
+            this.itemsList.Name = "itemsList";
+            this.itemsList.Size = new System.Drawing.Size(356, 248);
+            this.itemsList.TabIndex = 28;
+            this.itemsList.UseCompatibleStateImageBehavior = false;
+            this.itemsList.View = System.Windows.Forms.View.Details;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Silver;
-            this.label6.Location = new System.Drawing.Point(14, 9);
+            this.label6.Location = new System.Drawing.Point(0, 9);
             this.label6.Margin = new System.Windows.Forms.Padding(0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(299, 19);
             this.label6.TabIndex = 23;
             this.label6.Text = "Verifique os produtos que temos disponíveis:\r\n";
             // 
-            // listView1
+            // addBtn
             // 
-            this.listView1.BackColor = System.Drawing.SystemColors.Window;
-            this.listView1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.listView1.Font = new System.Drawing.Font("Calibri", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.listView1.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.listView1.FullRowSelect = true;
-            this.listView1.GridLines = true;
-            this.listView1.HideSelection = false;
-            this.listView1.LabelEdit = true;
-            this.listView1.Location = new System.Drawing.Point(3, 34);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(356, 226);
-            this.listView1.TabIndex = 28;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
+            this.addBtn.AutoSize = true;
+            this.addBtn.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.addBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.addBtn.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.addBtn.ForeColor = System.Drawing.Color.White;
+            this.addBtn.Location = new System.Drawing.Point(3, 3);
+            this.addBtn.Name = "addBtn";
+            this.addBtn.Size = new System.Drawing.Size(93, 26);
+            this.addBtn.TabIndex = 38;
+            this.addBtn.Text = "ADICIONAR";
+            this.addBtn.UseVisualStyleBackColor = false;
+            this.addBtn.Click += new System.EventHandler(this.addBtn_Click);
+            // 
+            // removeBtn
+            // 
+            this.removeBtn.AutoSize = true;
+            this.removeBtn.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.removeBtn.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.removeBtn.Font = new System.Drawing.Font("Calibri", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.removeBtn.ForeColor = System.Drawing.Color.White;
+            this.removeBtn.Location = new System.Drawing.Point(97, 3);
+            this.removeBtn.Name = "removeBtn";
+            this.removeBtn.Size = new System.Drawing.Size(93, 26);
+            this.removeBtn.TabIndex = 39;
+            this.removeBtn.Text = "REMOVER";
+            this.removeBtn.UseVisualStyleBackColor = false;
+            this.removeBtn.Click += new System.EventHandler(this.removeBtn_Click);
+            // 
+            // btnPanel
+            // 
+            this.btnPanel.Controls.Add(this.addBtn);
+            this.btnPanel.Controls.Add(this.removeBtn);
+            this.btnPanel.Location = new System.Drawing.Point(80, 293);
+            this.btnPanel.Name = "btnPanel";
+            this.btnPanel.Size = new System.Drawing.Size(193, 33);
+            this.btnPanel.TabIndex = 40;
+            this.btnPanel.Visible = false;
             // 
             // Form_Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SlateGray;
-            this.ClientSize = new System.Drawing.Size(386, 420);
+            this.ClientSize = new System.Drawing.Size(386, 435);
             this.Controls.Add(this.prodPanel);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.title);
@@ -333,10 +378,13 @@
             this.MaximizeBox = false;
             this.Name = "Form_Main";
             this.Text = "Menu";
+            this.Load += new System.EventHandler(this.Form_Main_Load);
             this.infoPanel.ResumeLayout(false);
             this.infoPanel.PerformLayout();
             this.prodPanel.ResumeLayout(false);
             this.prodPanel.PerformLayout();
+            this.btnPanel.ResumeLayout(false);
+            this.btnPanel.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -362,7 +410,10 @@
         private System.Windows.Forms.Button altpBtn;
         private System.Windows.Forms.Button cnclBtn;
         private System.Windows.Forms.Panel prodPanel;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView itemsList;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Panel btnPanel;
+        private System.Windows.Forms.Button addBtn;
+        private System.Windows.Forms.Button removeBtn;
     }
 }

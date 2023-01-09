@@ -27,9 +27,23 @@ namespace Trabalho_Final
             CenterToParent();
             BgColor();
             Posicao();
-            Preencher(cliente);
+            PreencherInfos(cliente);
+            PreencherLista();
 
+            if (cliente.Usuario == "admin")
+            {
+                btnPanel.Visible = true;
+            }
+        }
+        
+        private void Form_Main_Load(object sender, EventArgs e)
+        {
             menuBox.SelectedIndex = 0;
+
+            itemsList.Columns.Add("Nome", Convert.ToInt16(itemsList.Width * 0.3), HorizontalAlignment.Left);
+            itemsList.Columns.Add("Quantidade", Convert.ToInt16(itemsList.Width * 0.2), HorizontalAlignment.Left);
+            itemsList.Columns.Add("Código de identificação", Convert.ToInt16(itemsList.Width * 0.3), HorizontalAlignment.Left);
+            itemsList.Columns.Add("Preço", Convert.ToInt16(itemsList.Width * 0.2), HorizontalAlignment.Left);
         }
 
         private void BgColor()
@@ -43,15 +57,18 @@ namespace Trabalho_Final
             altBtn.BackColor = Color.FromArgb(56, 58, 89);
             altpBtn.BackColor = Color.FromArgb(56, 58, 89);
             cnclBtn.BackColor = Color.FromArgb(184, 101, 131);
+            addBtn.BackColor = Color.FromArgb(56, 58, 89);
+            removeBtn.BackColor = Color.FromArgb(56, 58, 89);
         }
 
         private void Posicao()
         {
+
             // titulo
             title.Location = new Point((Width - title.Width) / 2, 10);
         }
         
-        private void Preencher(Cliente cliente)
+        private void PreencherInfos(Cliente cliente)
         {
             // painel de informações
             campo_nome.Text = cliente.Nome;
@@ -70,17 +87,45 @@ namespace Trabalho_Final
             }
         }
 
+        private void PreencherLista()
+        {
+            // painel de produtos
+            itemsList.Items.Clear();
+            DataTable dt = formInicial.conexao(string.Format("SELECT * FROM produtos"));
+
+            for (int i = 0; i < dt.Rows.Count; i++)
+            {
+                ListViewItem item = new ListViewItem(dt.Rows[i]["nome"].ToString());
+                item.SubItems.Add(dt.Rows[i]["quantidade"].ToString());
+                item.SubItems.Add(dt.Rows[i]["identificador"].ToString());
+                item.SubItems.Add("R$" + dt.Rows[i]["preco"].ToString());
+
+                itemsList.Items.Add(item);
+            }
+        }
+
         private void menuBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (menuBox.SelectedIndex == 0)
             {
                 infoPanel.Visible = true;
                 prodPanel.Visible = false;
+
+                this.Height = 460;
             }
             else if (menuBox.SelectedIndex == 1)
             {
                 infoPanel.Visible = false;
                 prodPanel.Visible = true;
+
+                if (btnPanel.Visible == true)
+                {
+                    this.Height = 474;
+                }
+                else
+                {
+                    this.Height = 427;
+                }
             }
         }
 
@@ -141,6 +186,20 @@ namespace Trabalho_Final
         {
             Form_Password form = new Form_Password(campo_cpf.Text);
             form.ShowDialog();
+        }
+
+        private void addBtn_Click(object sender, EventArgs e)
+        {
+            Form_Add form = new Form_Add();
+            form.ShowDialog();
+            PreencherLista();
+        }
+
+        private void removeBtn_Click(object sender, EventArgs e)
+        {
+            Form_Delete form = new Form_Delete();
+            form.ShowDialog();
+            PreencherLista();
         }
     }
 }

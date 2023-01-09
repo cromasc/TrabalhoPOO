@@ -98,6 +98,18 @@
     <Compile Include="Cadastro.cs" />
     <Compile Include="Cliente.cs" />
     <Compile Include="ConexaoString.cs" />
+    <Compile Include="Form_Add.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Add.Designer.cs">
+      <DependentUpon>Form_Add.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Delete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Delete.Designer.cs">
+      <DependentUpon>Form_Delete.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_Inicial.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,8 +137,14 @@
     <Compile Include="Produto.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form_Add.resx">
+      <DependentUpon>Form_Add.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form_cadastro.resx">
       <DependentUpon>Form_cadastro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Delete.resx">
+      <DependentUpon>Form_Delete.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Inicial.resx">
       <DependentUpon>Form_Inicial.cs</DependentUpon>

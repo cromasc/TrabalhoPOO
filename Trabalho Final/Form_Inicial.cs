@@ -89,7 +89,9 @@ namespace Trabalho_Final
 
                     limpar();
                     Form_Main form = new Form_Main(objCliente);
+                    this.Hide();
                     form.ShowDialog();
+                    this.Show();
                 }
             }
         }
